@@ -2,14 +2,13 @@ name: Manual
 on:
   workflow_dispatch:
     inputs:
-      message:
-        greeting:
-          type: string
-          default: 'Hello'
-          required: true
-          description: A cheerful word
+      greeting:
+        type: string
+        default: 'Hello'
+        required: true
+        description: A cheerful word
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ input.greeting }}"
+      - run: echo "${{ inputs.greeting }}"
